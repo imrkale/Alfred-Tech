@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./problem1.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="top" id="top">
+        <div id="-5"><div>-5</div></div>
+        <div id="-4"><div>-4</div></div>
+        <div id="-3"><div>-3</div></div>
+        <div id="-2"><div>-2</div></div>
+        <div id="-1"><div>-1</div></div>
+        <div id="0"><div>0</div></div>
+        <div id="1"><div>1</div></div>
+        <div id="2"><div>2</div></div>
+        <div id="3"><div>3</div></div>
+        <div id="4"><div>4</div></div>
+        <div id="5"><div>5</div></div>
+        <div id="6"><div>6</div></div>
+        <div id="7"><div>7</div></div>
+        <div id="8"><div>8</div></div>
+        <div id="9"><div>9</div></div>
+    </div>
+
+    <script type="text/javascript">
+        
+
+        let arr=[-1,0,4,5,-3,2,8];
+        
+
+        for(var i=0;i<arr.length;i++)
+        {
+            var doc=document.getElementById(arr[i]);
+            var flag=parseInt(doc.firstChild.innerHTML);
+            if(flag>=0)
+                flag=true;
+            else
+                flag=false;
+                for(var j=0;flag?j<parseInt(doc.firstChild.innerHTML):j<-(parseInt(doc.firstChild.innerHTML));j++){
+                    if(flag)
+                    {
+                        let lastElement=doc.lastChild;
+                        let star = document.createElement('div');
+                        star.innerHTML = `<h4>*</h4>`;
+                        star.style.position="relative";
+                        star.style.top=`-${parseInt(doc.firstChild.innerHTML)*45}px`;
+                        doc.appendChild(star);
+                    }
+                    else{
+                        let star = document.createElement('div');
+                        star.innerHTML = `<h4>*</h4>`;
+                        doc.appendChild(star);  
+                    }
+                    
+                }
+            
+    
+            }
+        
+
+        
+
+    </script>
+</body>
+</html>

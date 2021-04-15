@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form style="margin-left:600px;margin-top:300px">
+        <input type="text" id="text" />
+        <button onclick="check()">Check</button>
+    </form>
+    
+
+    <script type="text/javascript">
+        var regex = /([a-z])(?!.*\1)/g;
+
+        function check() {
+        var val = document.getElementById('text').value.toLowerCase();
+        var res=val.match(regex).length == 26;
+
+        alert(res?"The given statment is pangram":"The given statement is not pangram");
+        
+        if(!res)
+        {
+            document.write("Characters not present in the sentence are:   ")
+            var mp = new Map();
+            for(var i=0; i<val.length; i++){
+                mp.set(val[i],val[i]);
+            }
+            for(var i=97;i<=122;i++)
+            {
+                if(!mp.get(String.fromCharCode(i)))
+                {
+                    document.write(String.fromCharCode(i));
+                }
+            }
+        }
+        
+
+
+        
+        
+}
+    </script>
+</body>
+</html>
